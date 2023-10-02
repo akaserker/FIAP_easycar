@@ -1,0 +1,50 @@
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 3rem;
+  }
+  
+  .mySlides {
+    display: none;
+    width: 100%;
+
+    text-align: center;
+  }
+
+.mySlides p{
+  text-align: justify;
+}
+  
+  /* Estilo para os indicadores de slide (pontos) */
+  .dot {
+    height: 15px;
+    width: 15px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1rem;
+  }
+  
+  .dot-container {
+    text-align: center;
+  }
+  
+  /* Estilo para o slide ativo */
+  .active {
+    background-color: #717171;
+  }
+  
+  /* Defina um tamanho fixo para a classe dos slides */
+  .mySlides {
+    width: 100%; /* O slide ocupará 100% da largura do contêiner pai */
+    max-width: 800px; /* Define a largura máxima desejada */
+    margin: 20px auto; /* Centralize o slide horizontalmente */
+  }
+  
+  .mySlides img {
+    width: 100%; /* Largura desejada para as imagens */
+    max-height: 300px; /* Altura desejada para as imagens */
+  }
+  

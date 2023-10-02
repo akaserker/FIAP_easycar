@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap");
+@import url("footer.css");
+@import url("card.css");
+@import url("slides.css");
+@import url("wallet.css");
+
+/* variable colors */
+:root {
+  --color-neutral-0: #0e0c0c;
+  --color-neutral-10: #171717;
+  --color-neutral-30: #a8a29e;
+  --color-neutral-40: #f5f5f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Jost", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Jost", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Defina a altura mínima para ocupar a altura total da viewport */
+}
+
+/* Estilos para o main (conteúdo principal) */
+main {
+  flex-grow: 1;
+  margin: 10px;
+}
+
+/* link style */
+a {
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* header style */
+header {
+  background: #bebebe;
+  padding: 0.5rem;
+}
+
+/* logo style */
+.logo {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-left: 10px;
+}
+
+/* Estilos para o botão de menu móvel */
+.mobile-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: var(--color-neutral-40);
+  margin: 8px;
+  transition: 0.3s;
+}
+
+/* Estilos para o menu de navegação */
+nav {
+  display: flex;
+  align-items: center;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  background: #bebebe;
+  height: 8vh;
+  padding: 0.5rem;
+}
+
+/* Estilos para a lista de navegação */
+.nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 2%;
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 20px;
+}
+
+/* Estilos para o menu de pesquisa */
+.nav-search {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: #0a1b2d;
+  padding: 0.5rem;
+  height: 4vh;
+}
+
+/* Estilos para o campo de pesquisa */
+.nav-search .search-box {
+  background: #0d243b;
+  height: 20px;
+  padding: 10px 0 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 240px;
+  margin-right: 20px;
+}
+
+.search-text {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+  font-size: 16px;
+  line-height: 30px;
+  color: #fff;
+}
+
+
+
+.search-box input {
+  border: none;
+  background: none;
+  outline: none;
+  color: white;
+}
+
+.search-button {
+  width: 40px;
+  height: 40px;
+  background: #0a1b2d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-button img {
+  width: 25px;
+  height: 25px;
+}
+
+
+
+/* START RESPONSIV */
+/* START RESPONSIV */
+/* START RESPONSIV */
+
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  .search-box {
+    top: 10%;
+    left: 10%;
+  }
+
+  .search-text {
+    width: 130px;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    width: 50vw;
+    height: 92vh;
+    background: #23232e;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+    z-index: 1000; 
+  }
+  .nav-list li {
+    margin-left: 0;
+    opacity: 0;
+  }
+  .mobile-menu {
+    display: block;
+  }
+}
+
+.nav-list.active {
+  transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+
+@media screen and (max-width: 768px) {
+  #footer_content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  #footer_content {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 3rem 2rem;
+  }
+}
